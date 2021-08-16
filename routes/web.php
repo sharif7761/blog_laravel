@@ -31,6 +31,14 @@ Route::get('/admin/post', function () {
     return view('admin.post.post');
 })->name('admin.post');
 
+Route::get('/admin/category', function () {
+    return view('admin.category.category');
+})->name('admin.category');
+
+Route::get('/admin/tag', function () {
+    return view('admin.tag.tag');
+})->name('admin.tag');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
