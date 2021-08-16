@@ -27,6 +27,10 @@ Route::get('/admin', function () {
     return view('admin.home');
 })->name('admin');
 
+Route::get('/admin/post', function () {
+    return view('admin.post.post');
+})->name('admin.post');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
