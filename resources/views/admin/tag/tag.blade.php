@@ -10,21 +10,23 @@
                         Tag
                     </h3>
                 </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Name">
+                <form method="post" action="{{ route('tag.store') }}">
+                    @csrf
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Slug</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Slug">
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

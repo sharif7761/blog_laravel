@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -35,7 +36,15 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|max:255',
+        ]);
+        $tag = new Tag();
+        $tag->name = $request->name;
+        $tag->slug = $request->slug;
+        $tag->save();
+        return back();
     }
 
     /**
