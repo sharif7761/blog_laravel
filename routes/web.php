@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.home');;
 Route::get('/post', [App\Http\Controllers\User\PostController::class, 'index'])->name('user.post');;
 
@@ -26,8 +25,4 @@ Route::resource('admin/tag', TagController::class);
 
 Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
 
-
-
 Auth::routes();
-
-

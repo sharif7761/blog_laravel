@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -35,7 +36,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+           'name' => 'required|max:255',
+           'slug' => 'required|max:255',
+        ]);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->slug = $request->slug;
+        $category->save();
+        return back();
     }
 
     /**
