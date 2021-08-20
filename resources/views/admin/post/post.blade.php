@@ -10,47 +10,45 @@
                         Post
                     </h3>
                 </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Title">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Subtitle</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Subtitle">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Slug</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Slug">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">Image</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
+                <form method="post" action="{{ route('post.store') }}">
+                    @csrf
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="subtitle">Subtitle</label>
+                            <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="Enter Subtitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug">
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image" id="image">
+                                    <label class="custom-file-label" for="image">Choose file</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Body</label>
-                        <textarea id="summernote"></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="body">Body</label>
+                            <textarea id="summernote" name="body"></textarea>
+                        </div>
 
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Publish</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="status" name="status" value="1">
+                            <label class="form-check-label" for="status">Publish</label>
+                        </div>
                     </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -35,7 +36,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'subtitle' => 'required|max:255',
+            'slug' => 'required|max:255',
+            'body' => 'required',
+        ]);
+        $post = new Post();
+        $post->title = $request->title;
+        $post->subtitle = $request->subtitle;
+        $post->slug = $request->slug;
+        $post->body = $request->body;
+        $post->status = isset($request->status[0]) ? 1 : 0;
+        $post->posted_by = '1';
+        $post->image = '1';
+        $post->save();
+        return back();
     }
 
     /**
