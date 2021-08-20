@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,33 +17,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::resource('/post', 'Admin/PostController');
+Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.home');;
+Route::get('/post', [App\Http\Controllers\User\PostController::class, 'index'])->name('user.post');;
+
+Route::resource('admin/post', PostController::class);
+Route::resource('admin/category', CategoryController::class);
+Route::resource('admin/tag', TagController::class);
+
+Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
 
 
-Route::get('/post', function () {
-    return view('post');
-})->name('post');
-
-
-Route::get('/admin', function () {
-    return view('admin.home');
-})->name('admin');
-
-Route::get('/admin/post', function () {
-    return view('admin.post.post');
-})->name('admin.post');
-
-Route::get('/admin/category', function () {
-    return view('admin.category.category');
-})->name('admin.category');
-
-Route::get('/admin/tag', function () {
-    return view('admin.tag.tag');
-})->name('admin.tag');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

@@ -133,19 +133,19 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">MULTI LEVEL EXAMPLE</li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.post') }}" class="nav-link">
+                    <a href="{{ route('post.index') }}" class="nav-link">
                         <i class="fas fa-circle nav-icon"></i>
                         <p>Post</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.category') }}" class="nav-link">
+                    <a href="{{ route('category.index') }}" class="nav-link">
                         <i class="fas fa-circle nav-icon"></i>
                         <p>Category</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.tag') }}" class="nav-link">
+                    <a href="{{ route('tag.index') }}" class="nav-link">
                         <i class="fas fa-circle nav-icon"></i>
                         <p>Tags</p>
                     </a>

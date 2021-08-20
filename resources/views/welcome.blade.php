@@ -12,7 +12,7 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <!-- Post preview-->
                 <div class="post-preview">
-                    <a href="{{ route('post') }}">
+                    <a href="{{ route('user.post') }}">
                         <h2 class="post-title">Infinity Loop Blog</h2>
                         <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
                     </a>
@@ -26,7 +26,7 @@
                 <hr class="my-4" />
                 <!-- Post preview-->
                 <div class="post-preview">
-                    <a href="{{ route('post') }}"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
+                    <a href="{{ route('user.post') }}"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
                     <p class="post-meta">
                         Posted by
                         <a href="#!">Start Bootstrap</a>
