@@ -44,7 +44,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->slug = $request->slug;
         $category->save();
-        return back();
+        return back()->with('message', 'Data Added Successfully');
     }
 
     /**

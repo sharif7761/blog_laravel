@@ -51,7 +51,7 @@ class PostController extends Controller
         $post->posted_by = '1';
         $post->image = '1';
         $post->save();
-        return back();
+        return back()->with('message', 'Data Added Successfully');
     }
 
     /**

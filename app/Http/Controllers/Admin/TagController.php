@@ -44,7 +44,7 @@ class TagController extends Controller
         $tag->name = $request->name;
         $tag->slug = $request->slug;
         $tag->save();
-        return back();
+        return back()->with('message', 'Data Added Successfully');
     }
 
     /**
