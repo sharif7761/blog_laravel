@@ -23,15 +23,21 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($categories as $category)
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                                <td>{{$category->name}}</td>
+                                <td>{{$category->slug}}</td>
                                 <td>
                                     <a href="#" class="btn btn-success">Edit</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
+                                    <form action="{{ route('category.destroy', $category->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"  class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this category?');">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
