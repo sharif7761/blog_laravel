@@ -23,15 +23,21 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($tags as $tag)
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                                <td>{{ $tag->name }}</td>
+                                <td>{{ $tag->slug }}</td>
                                 <td>
                                     <a href="#" class="btn btn-success">Edit</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
+                                    <form action="{{ route('tag.destroy', $tag->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"  class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this tag?');">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

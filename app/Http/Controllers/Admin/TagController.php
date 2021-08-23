@@ -15,7 +15,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        return view('admin.tag.index');
+        $tags = Tag::all();
+        return view('admin.tag.index', compact('tags'));
     }
 
     /**
@@ -89,6 +90,7 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tag::destroy($id);
+        return back()->with('message', 'Data deleted Successfully');
     }
 }
