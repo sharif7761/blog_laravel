@@ -25,7 +25,7 @@
                             <tbody>
                             @foreach($tags as $tag)
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{ $loop->index }}</th>
                                 <td>{{ $tag->name }}</td>
                                 <td>{{ $tag->slug }}</td>
                                 <td>
