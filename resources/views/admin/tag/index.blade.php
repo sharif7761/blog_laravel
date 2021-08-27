@@ -25,11 +25,11 @@
                             <tbody>
                             @foreach($tags as $tag)
                             <tr>
-                                <th scope="row">{{ $loop->index }}</th>
+                                <th scope="row">{{ $loop->index + 1 }}</th>
                                 <td>{{ $tag->name }}</td>
                                 <td>{{ $tag->slug }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-success">Edit</a>
+                                    <a href="{{ route('tag.edit', $tag->id) }}" class="btn btn-success">Edit</a>
                                     <form action="{{ route('tag.destroy', $tag->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
