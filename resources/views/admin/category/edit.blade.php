@@ -11,8 +11,9 @@
                         Category Update
                     </h3>
                 </div>
-                <form method="post" action="{{ route('category.update'. $category->id) }}">
+                <form method="post" action="{{ route('category.update', $category->id) }}">
                     @csrf
+                    @method('put')
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Name</label>

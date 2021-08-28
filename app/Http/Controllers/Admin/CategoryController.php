@@ -68,7 +68,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category= Category::findOrFail($id);
-        return view('admin.tag.edit', compact('category'));
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -88,7 +88,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->slug = $request->slug;
         $category->save();
-        return back()->with('message', 'Data Added Successfully');
+        return back()->with('message', 'Data Updated Successfully');
     }
 
     /**
