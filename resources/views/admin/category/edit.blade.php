@@ -8,20 +8,19 @@
             <div class="card card-outline card-info">
                 <div class="card-header">
                     <h3 class="card-title">
-                        Tag
+                        Category Update
                     </h3>
                 </div>
-                <form method="post" action="{{ route('tag.update', $tag->id) }}">
+                <form method="post" action="{{ route('category.update'. $category->id) }}">
                     @csrf
-                    @method('put')
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ $tag->name }}" placeholder="Enter Name">
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $category->name }}" placeholder="Enter Name">
                         </div>
                         <div class="form-group">
                             <label for="slug">Slug</label>
-                            <input type="text" class="form-control" id="slug" name="slug" value="{{ $tag->slug }}" placeholder="Enter Slug">
+                            <input type="text" class="form-control" id="slug" name="slug" value="{{ $category->slug }}" placeholder="Enter Slug">
                         </div>
                     </div>
                     <!-- /.card-body -->

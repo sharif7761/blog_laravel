@@ -80,7 +80,15 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|max:255',
+        ]);
+        $tag = Tag::findOrFail($id);
+        $tag->name = $request->name;
+        $tag->slug = $request->slug;
+        $tag->save();
+        return back()->with('message', 'Data Updated Successfully');
     }
 
     /**
